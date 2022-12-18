@@ -17,7 +17,7 @@ avaliacoesRoute.route('/').get((req, res) => {
 });
 
 avaliacoesRoute.route('/:game_id').get((req, res) => {
-    Reviews.find({game_id: req.params.game_id}, (error, data) => {
+    Reviews.find({ game_id: req.params.game_id }, (error, data) => {
         if (error) {
             return next(error)
         } else {
@@ -31,9 +31,18 @@ avaliacoesRoute.route('/create').post((req, res, next) => {
         if (error) {
             return next(error)
         } else {
-            let reviews
-            reviews = Reviews.find({game_id: req.body.game_id}).exec();
-            console.log(reviews[1]);
+            Reviews.find({ game_id: req.body.game_id }, (error, data) => {
+                if (error) {
+                    return next(error)
+                } else {
+                    notaTotal = 0;
+                    for (i = 0; i < data.length; i++) {
+                        notaTotal += data[i].nota;
+                    }
+                    notaTotal = notaTotal / data.length;
+                    Games.updateOne({ nome: req.body.game_id }, { avaliacao: notaTotal });
+                }
+            });
             res.json(data)
         }
     })
