@@ -21,6 +21,7 @@ gamesRoute.route('/list-most-rated/:consoleId').get((req, res, next) => {
         });
 });
 
+// Lista jogos do console filtrados
 gamesRoute.route('/list-filtered/:consoleId').get((req, res, next) => {
     var query = {
         console_id: req.params.consoleId
