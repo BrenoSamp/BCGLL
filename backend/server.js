@@ -7,7 +7,10 @@ var corsOptions = {
     origin: '*'
 };
 
-const gamesRoute = require('./app/routes/games.route')
+const gamesRoute = require('./app/routes/games.route');
+const usuariosRoute = require('./app/routes/usuarios.route');
+const avaliacoesRoute = require('./app/routes/avaliacoes.route');
+const consolesRoute = require('./app/routes/consoles.route');
 
 app.use(cors(corsOptions));
 
@@ -15,6 +18,9 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 app.use('/games', gamesRoute);
+app.use('/usuarios', usuariosRoute);
+app.use('/avaliacoes', avaliacoesRoute);
+app.use('/consoles', consolesRoute);
 
 
 const db = require('./app/models/models');
