@@ -7,17 +7,19 @@ var corsOptions = {
     origin: '*'
 };
 
-const gamesRoute = require('./app/routes/games.route')
-
 app.use(cors(corsOptions));
 
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
-app.use('/', gamesRoute);
+app.use('/games', require('./app/routes/games.route'));
+app.use('/consoles', require('./app/routes/consoles.route'));
+app.use('/avaliacoes', require('./app/routes/avaliacoes.route'));
+app.use('/usuarios', require('./app/routes/usuarios.route'));
 
 
 const db = require('./app/models/models');
+const { application } = require('express');
 db.mongoose.connect('mongodb://localhost:27017/bcgll', {
     useNewUrlParser: true,
     useUnifiedTopology: true

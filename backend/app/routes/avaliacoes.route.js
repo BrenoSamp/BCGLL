@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const avaliacoesRoute = express.Router();
 
-let Avaliacoes = require('../models/avaliacoes');
+const models = require('../models/models');
+const Avaliacoes = models.Avaliacoes;
 
 avaliacoesRoute.route('/').get((req, res) => {
     Avaliacoes.find((error, data) => {

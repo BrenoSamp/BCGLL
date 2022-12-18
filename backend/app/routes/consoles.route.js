@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const consolesRoute = express.Router();
 
-let Consoles = require('../models/consoles');
+const models = require('../models/models');
+const Consoles = models.Consoles;
 
 consolesRoute.route('/').get((req, res) => {
     Consoles.find((error, data) => {

@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 const usuarioRoute = express.Router();
 
-let Usuario = require('../models/usuarios');
+const models = require('../models/models');
+const Usuario = models.Usuario;
 
 usuarioRoute.route('/').get((req, res) => {
     Usuario.find((error, data) => {
