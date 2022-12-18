@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const ObjectId = Schema.ObjectId;
 
 const ConsolesSchema = mongoose.Schema({
     nome: {
-        type: String
+        type: ObjectId
     },
 }, {
     timestamps: false,
