@@ -3,10 +3,21 @@ const app = express();
 const avaliacoesRoute = express.Router();
 
 const models = require('../models/models');
-const Avaliacoes = models.Avaliacoes;
+const Reviews = models.Reviews;
+const Games = models.Games;
 
 avaliacoesRoute.route('/').get((req, res) => {
-    Avaliacoes.find((error, data) => {
+    Reviews.find((error, data) => {
+        if (error) {
+            return next(error)
+        } else {
+            res.json(data)
+        }
+    })
+});
+
+avaliacoesRoute.route('/:game_id').get((req, res) => {
+    Reviews.find({game_id: req.params.game_id}, (error, data) => {
         if (error) {
             return next(error)
         } else {
@@ -16,11 +27,13 @@ avaliacoesRoute.route('/').get((req, res) => {
 });
 
 avaliacoesRoute.route('/create').post((req, res, next) => {
-    Avaliacoes.create(req.body, (error, data) => {
+    Reviews.create(req.body, (error, data) => {
         if (error) {
             return next(error)
         } else {
-            console.log(data)
+            let reviews
+            reviews = Reviews.find({game_id: req.body.game_id}).exec();
+            console.log(reviews[1]);
             res.json(data)
         }
     })

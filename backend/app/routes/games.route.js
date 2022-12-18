@@ -21,6 +21,17 @@ gamesRoute.route('/list-most-rated/:consoleId').get((req, res, next) => {
         });
 });
 
+// Cria jogos
+gamesRoute.route('/create').get((req, res, next) => {
+    Games.create(req.body, (error, data) => {
+        if (error) {
+            return next(error)
+        } else {
+            res.json(data)
+        }
+    })
+});
+
 // Lista jogos do console filtrados
 gamesRoute.route('/list-filtered/:consoleId').get((req, res, next) => {
     var query = {

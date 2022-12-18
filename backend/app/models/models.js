@@ -55,9 +55,25 @@ const GamesSchema = schema({
     collection: 'games'
 });
 
+const ReviewsSchema = schema({
+    nota: {
+        type: Number
+    },
+    descricao: {
+        type: String
+    },
+    game_id: {
+        type: String
+    },
+}, {
+    timestamps: false,
+    collection: 'reviews'
+});
+
 module.exports = {
     Usuario: mongoose.model('Usuario', UsuarioSchema),
     Consoles: mongoose.model('Consoles', ConsolesSchema),
     Games: mongoose.model('Games', GamesSchema),
+    Reviews: mongoose.model('Reviews', ReviewsSchema),
     mongoose
 };
