@@ -4,17 +4,21 @@ const cors = require('cors');
 const app = express();
 
 var corsOptions = {
-    origin: 'http://localhost:8081'
+    origin: '*'
 };
+
+const gamesRoute = require('./app/routes/games.route')
 
 app.use(cors(corsOptions));
 
 app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
+app.use('/', gamesRoute);
 
-const db = require('./app/models');
-db.mongoose.connect(db.url, {
+
+const db = require('./app/models/models');
+db.mongoose.connect('mongodb://localhost:27017/bcgll', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
