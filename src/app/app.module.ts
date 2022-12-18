@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { EmployeeCreateComponent } from './components/employee-create/employee-create.component';
 import { EmployeeEditComponent } from './components/employee-edit/employee-edit.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
+import { ReviewListComponent } from './components/review-list/review-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeCreateComponent,
     EmployeeEditComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    ReviewListComponent,
   ],
   imports: [
     ReactiveFormsModule,

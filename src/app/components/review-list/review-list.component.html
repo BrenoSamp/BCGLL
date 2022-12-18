@@ -1,0 +1,28 @@
+<div class="container">
+    <!-- No data message -->
+    <!--<p *ngIf="Review.length <= 0" class="no-data text-center">There is no review added yet!</p>-->
+    <!-- Employee list -->
+    <h2>Lista de reviews cadastradas</h2>
+    <table class="table table-bordered">
+      <thead class="table-success">
+        <tr>
+          <th scope="col">Imagem</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Resumo</th>
+          <th scope="col">Desenvolvedor</th>
+          <th scope="col">Gênero</th>  
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let review of Review; let i = index">
+            <td>{{review.imagem}}</td>
+            <td>{{review.nome}}</td>
+            <td>{{review.resumo}}</td>
+            <td>{{review.desenvolvedor}}</td>
+            <td>{{review.genero}}</td>
+        </tr>
+
+      <button></button>
+      </tbody>
+    </table>
+  </div>

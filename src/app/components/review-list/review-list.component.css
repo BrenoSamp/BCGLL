@@ -1,0 +1,11 @@
+th{
+    text-align: center;
+    background-color: #aeb347;
+}
+
+table{
+    margin-top: 6px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
