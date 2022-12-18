@@ -40,7 +40,13 @@ avaliacoesRoute.route('/create').post((req, res, next) => {
                         notaTotal += data[i].nota;
                     }
                     notaTotal = notaTotal / data.length;
-                    Games.updateOne({ nome: req.body.game_id }, { avaliacao: notaTotal });
+                    Games.updateOne({ nome: req.body.game_id }, { avaliacao: notaTotal }, { new: true }, (error) => {
+                        if (error) {
+                            return next(error)
+                        } else {
+                            console.log('Avaliacao atualizada com sucesso');
+                        }
+                    });
                 }
             });
             res.json(data)
