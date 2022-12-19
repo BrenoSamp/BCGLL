@@ -1,6 +1,15 @@
 const express = require('express');
+const app = express();
 const gamesRoute = express.Router();
 let Models = require('../models/models');
+const session = require('express-session');
+
+app.use(session({
+    secret: 'nosso segredinho',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false },
+}));
 
 // Games model
 let Games = Models.Games;

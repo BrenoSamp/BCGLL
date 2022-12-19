@@ -1,6 +1,14 @@
 const express = require('express');
 const app = express();
 const avaliacoesRoute = express.Router();
+const session = require('express-session');
+
+app.use(session({
+    secret: 'nosso segredinho',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false },
+}));
 
 const models = require('../models/models');
 const Reviews = models.Reviews;
