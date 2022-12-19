@@ -42,6 +42,7 @@ usuarioRoute.route('/login').post((req, res, next) => {
         if (error) {
             return next(error)
         } else {
+            req.session.id = data;
             console.log(data)
             res.json(data)
         }
