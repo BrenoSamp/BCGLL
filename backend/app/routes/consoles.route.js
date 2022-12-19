@@ -1,6 +1,14 @@
 const express = require('express');
 const app = express();
 const consolesRoute = express.Router();
+const session = require('express-session');
+
+app.use(session({
+    secret: 'nosso segredinho',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false },
+}));
 
 const models = require('../models/models');
 const Consoles = models.Consoles;
