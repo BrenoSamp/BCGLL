@@ -30,7 +30,7 @@ export class ApiService {
   }
 
   createUser(data): Observable<any> {
-    let url = `${this.baseUri}/usuarios/create`;
+    let url = `${this.baseUri}/usuarios/signup`;
     return this.http.post(url, data).pipe(catchError(this.errorMgmt));
   }
 
@@ -103,6 +103,11 @@ export class ApiService {
     return this.http
       .delete(url, { headers: this.headers })
       .pipe(catchError(this.errorMgmt));
+  }
+
+  userLogin(data): Observable<any> {
+    let url = `${this.baseUri}/usuarios/login`;
+    return this.http.post(url, data).pipe(catchError(this.errorMgmt));
   }
 
   // Error handling
