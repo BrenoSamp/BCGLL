@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { EmployeeCreateComponent } from './components/employee-create/employee-create.component';
 import { EmployeeEditComponent } from './components/employee-edit/employee-edit.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
-import { SexoComponent } from './sexo/sexo.component';
+import { ReviewListComponent } from './components/review-list/review-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,7 @@ import { SexoComponent } from './sexo/sexo.component';
     EmployeeCreateComponent,
     EmployeeEditComponent,
     EmployeeListComponent,
-    SexoComponent
+    ReviewListComponent,
   ],
   imports: [
     ReactiveFormsModule,
