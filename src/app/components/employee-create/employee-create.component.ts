@@ -1,7 +1,8 @@
 import { Router } from '@angular/router';
-import { ApiService } from './../../service/api.service';
+import { ApiService } from '../../service/api.service';
 import { Component, OnInit, NgZone } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 @Component({
   selector: 'app-employee-create',
   templateUrl: './employee-create.component.html',
@@ -23,13 +24,7 @@ export class EmployeeCreateComponent implements OnInit {
   mainForm() {
     this.employeeForm = this.fb.group({
       codigo: ['', [Validators.required]],
-      nome: [
-        '',
-        [
-          Validators.required
-
-        ],
-      ],
+      nome: ['', [Validators.required]],
       creditos: ['', [Validators.required]],
     });
   }

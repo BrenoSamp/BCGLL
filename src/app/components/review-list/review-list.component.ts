@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from './../../service/api.service';
+import { ApiService } from '../../service/api.service';
 @Component({
   selector: 'app-review-list',
   templateUrl: './review-list.component.html',
@@ -9,11 +9,11 @@ export class ReviewListComponent implements OnInit {
   
   Review:any = [];
   constructor(private apiService: ApiService) { 
-    this.readReview();
+    this.readReview("_id");
   }
   ngOnInit() {}
-  readReview(){
-    this.apiService.getReviews().subscribe((data) => {
+  readReview(id){
+    this.apiService.getReviews(id).subscribe((data) => {
      this.Review = data;
     })    
   }

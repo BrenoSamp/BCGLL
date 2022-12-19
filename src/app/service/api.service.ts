@@ -24,13 +24,18 @@ export class ApiService {
     return this.http.post(url, data).pipe(catchError(this.errorMgmt));
   }
 
+  createGame(data): Observable<any> {
+    let url = `${this.baseUri}/games/create`;
+    return this.http.post(url, data).pipe(catchError(this.errorMgmt));
+  }
+
   // Get all employees
   getEmployees() {
     return this.http.get(`${this.baseUri}`);
   }
 
-  getReviews() {
-    return this.http.get(`${this.baseUri}`);
+  getReviews(id) {
+    return this.http.get(`${this.baseUri}/avaliacoes/${id}`);
   }
 
   // Get employee
