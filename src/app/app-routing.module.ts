@@ -19,7 +19,8 @@ const routes: Routes = [
   { path: 'reviews-list/:id', component: ReviewListComponent},
   {path: 'game-list', component: GameListComponent},
   {path: 'game-create', component: GameCreateComponent}, 
-  {path: 'user-create', component: UserCreateComponent}
+  {path: 'user-create', component: UserCreateComponent},
+  { path: 'lista-consoles', component: GameListComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

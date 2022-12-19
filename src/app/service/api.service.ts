@@ -30,7 +30,7 @@ export class ApiService {
   }
 
   createUser(data): Observable<any> {
-    let url = `${this.baseUri}/users/create`;
+    let url = `${this.baseUri}/usuarios/create`;
     return this.http.post(url, data).pipe(catchError(this.errorMgmt));
   }
 

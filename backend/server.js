@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
 
 const app = express();
 
@@ -22,9 +23,8 @@ app.use('/usuarios', usuariosRoute);
 app.use('/avaliacoes', avaliacoesRoute);
 app.use('/consoles', consolesRoute);
 
-
 const db = require('./app/models/models');
-db.mongoose.connect('mongodb://localhost:27017/bcgll', {
+mongoose.connect('mongodb://127.0.0.1:27017/bcgll', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
