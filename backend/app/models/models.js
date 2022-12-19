@@ -20,7 +20,7 @@ const UsuarioSchema = schema({
 
 const ConsolesSchema = schema({
     nome: {
-        type: objectId
+        type: String
     },
 }, {
     timestamps: false,
