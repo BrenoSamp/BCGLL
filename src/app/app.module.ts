@@ -10,6 +10,9 @@ import { EmployeeCreateComponent } from './components/employee-create/employee-c
 import { EmployeeEditComponent } from './components/employee-edit/employee-edit.component';
 import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { ReviewListComponent } from './components/review-list/review-list.component';
+import { ReviewCreateComponent } from './components/review-create/review-create.component';
+import { GameCreateComponent } from './components/game-create/game-create.component';
+import { GameListComponent } from './components/game-list/game-list.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,9 @@ import { ReviewListComponent } from './components/review-list/review-list.compon
     EmployeeEditComponent,
     EmployeeListComponent,
     ReviewListComponent,
+    ReviewCreateComponent,
+    GameCreateComponent,
+    GameListComponent,
   ],
   imports: [
     ReactiveFormsModule,
