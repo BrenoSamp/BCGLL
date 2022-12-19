@@ -7,7 +7,7 @@ import { ReviewListComponent } from './components/review-list/review-list.compon
 import { ReviewCreateComponent } from './components/review-create/review-create.component';
 import { GameListComponent } from './components/game-list/game-list.component';
 import { GameCreateComponent } from './components/game-create/game-create.component';
-
+import { UserCreateComponent } from './components/user-create/user-create.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'create-employee' },
@@ -18,7 +18,8 @@ const routes: Routes = [
   { path: 'create-review/:id', component: ReviewCreateComponent},
   { path: 'reviews-list/:id', component: ReviewListComponent},
   {path: 'game-list', component: GameListComponent},
-  {path: 'game-create', component: GameCreateComponent} 
+  {path: 'game-create', component: GameCreateComponent}, 
+  {path: 'user-create', component: UserCreateComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

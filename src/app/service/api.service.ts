@@ -29,6 +29,11 @@ export class ApiService {
     return this.http.post(url, data).pipe(catchError(this.errorMgmt));
   }
 
+  createUser(data): Observable<any> {
+    let url = `${this.baseUri}/users/create`;
+    return this.http.post(url, data).pipe(catchError(this.errorMgmt));
+  }
+
   // Get all employees
   getEmployees() {
     return this.http.get(`${this.baseUri}`);
