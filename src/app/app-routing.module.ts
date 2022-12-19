@@ -14,11 +14,11 @@ const routes: Routes = [
   { path: 'create-employee', component: EmployeeCreateComponent },
   { path: 'edit-employee/:id', component: EmployeeEditComponent },
   { path: 'employees-list', component: EmployeeListComponent },
-  { path: 'reviews-list', component: ReviewListComponent},  
+  { path: 'reviews-list', component: ReviewListComponent},
   { path: 'create-review/:id', component: ReviewCreateComponent},
   { path: 'reviews-list/:id', component: ReviewListComponent},
-  {path: 'game-list', component: GameListComponent},
-  {path: 'game-create', component: GameCreateComponent} 
+  { path: 'lista-consoles', component: GameListComponent},
+  { path: 'game-create', component: GameCreateComponent}
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
