@@ -54,7 +54,7 @@ export class ReviewCreateComponent implements OnInit {
       return this.apiService.createReview(this.reviewForm.value).subscribe({
         complete: () => {
           console.log('Review successfully created!'),
-            this.ngZone.run(() => this.router.navigateByUrl('/reviews-list'));
+            this.ngZone.run(() => this.router.navigateByUrl('/avaliacoes'));
         },
         error: (e) => {
           console.log('Error creating review!');

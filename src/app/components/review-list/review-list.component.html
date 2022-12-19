@@ -6,23 +6,15 @@
     <table class="table table-bordered">
       <thead class="table-success">
         <tr>
-          <th scope="col">Imagem</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Resumo</th>
-          <th scope="col">Desenvolvedor</th>
-          <th scope="col">Gênero</th>  
+          <th scope="col">Nota</th>
+          <th scope="col">Descricao</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let review of Review; let i = index">
-            <td>{{review.imagem}}</td>
-            <td>{{review.nome}}</td>
-            <td>{{review.resumo}}</td>
-            <td>{{review.desenvolvedor}}</td>
-            <td>{{review.genero}}</td>
+          <td>{{review.nota}}</td>
+          <td>{{review.descricao}}</td>
         </tr>
-
-      <button></button>
       </tbody>
     </table>
   </div>

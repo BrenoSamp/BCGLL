@@ -20,7 +20,7 @@ export class ApiService {
   }
 
   createReview(data): Observable<any> {
-    let url = `${this.baseUri}/create`;
+    let url = `${this.baseUri}/avaliacoes/create`;
     return this.http.post(url, data).pipe(catchError(this.errorMgmt));
   }
 
@@ -39,8 +39,8 @@ export class ApiService {
     return this.http.get(`${this.baseUri}`);
   }
 
-  getReviews(id) {
-    return this.http.get(`${this.baseUri}/avaliacoes/${id}`);
+  getReviews() {
+    return this.http.get(`${this.baseUri}/avaliacoes`);
   }
 
   // Get employee
@@ -67,6 +67,26 @@ export class ApiService {
 
   getReview(id): Observable<any> {
     let url = `${this.baseUri}/read/${id}`;
+    return this.http.get(url, { headers: this.headers }).pipe(
+      map((res: Response) => {
+        return res || {};
+      }),
+      catchError(this.errorMgmt)
+    );
+  }
+
+  getGames(id): Observable<any> {
+    let url = `${this.baseUri}/list-most-rated/${id}`;
+    return this.http.get(url, { headers: this.headers }).pipe(
+      map((res: Response) => {
+        return res || {};
+      }),
+      catchError(this.errorMgmt)
+    );
+  }
+
+  getGame(id): Observable<any> {
+    let url = `${this.baseUri}/list-most-rated/${id}`;
     return this.http.get(url, { headers: this.headers }).pipe(
       map((res: Response) => {
         return res || {};
