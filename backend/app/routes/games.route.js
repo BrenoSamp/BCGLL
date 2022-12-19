@@ -22,7 +22,7 @@ gamesRoute.route('/list-most-rated/:consoleId').get((req, res, next) => {
 });
 
 // Cria jogos
-gamesRoute.route('/create').get((req, res, next) => {
+gamesRoute.route('/create').post((req, res, next) => {
     Games.create(req.body, (error, data) => {
         if (error) {
             return next(error)
