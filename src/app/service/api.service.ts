@@ -12,7 +12,7 @@ import {
 export class ApiService {
   baseUri: string = 'http://localhost:8080';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
   // Create
   createEmployee(data): Observable<any> {
     let url = `${this.baseUri}/create`;
@@ -54,6 +54,17 @@ export class ApiService {
     );
   }
 
+  // Get employee
+  getConsoles(): Observable<any> {
+    let url = `${this.baseUri}/consoles`;
+    return this.http.get(url, { headers: this.headers }).pipe(
+      map((res: Response) => {
+        return res || {};
+      }),
+      catchError(this.errorMgmt)
+    );
+  }
+
   getReview(id): Observable<any> {
     let url = `${this.baseUri}/read/${id}`;
     return this.http.get(url, { headers: this.headers }).pipe(
@@ -75,7 +86,7 @@ export class ApiService {
   updateReview(id, data): Observable<any> {
     let url = `${this.baseUri}/update/${id}`;
     return this.http
-      .put(url, data, { headers: this.headers }) 
+      .put(url, data, { headers: this.headers })
       .pipe(catchError(this.errorMgmt));
   }
 

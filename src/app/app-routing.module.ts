@@ -10,11 +10,11 @@ import { GameCreateComponent } from './components/game-create/game-create.compon
 import { UserCreateComponent } from './components/user-create/user-create.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'create-employee' },
+  { path: '', pathMatch: 'full', redirectTo: 'lista-consoles' },
   { path: 'create-employee', component: EmployeeCreateComponent },
   { path: 'edit-employee/:id', component: EmployeeEditComponent },
   { path: 'employees-list', component: EmployeeListComponent },
-  { path: 'reviews-list', component: ReviewListComponent},  
+  { path: 'reviews-list', component: ReviewListComponent},
   { path: 'create-review/:id', component: ReviewCreateComponent},
   { path: 'reviews-list/:id', component: ReviewListComponent},
   {path: 'game-list', component: GameListComponent},
