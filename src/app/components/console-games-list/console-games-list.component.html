@@ -5,6 +5,20 @@
             <div class="card-header">
                 <h3 class="mb-0">Jogos mais bem avaliados</h3>
             </div>
+            <div>
+                <form (ngSubmit)="onSubmitName($event)">
+                    <h5>Pesquisar por Nome: </h5>
+                    <input name="nome">
+                </form>
+                <form (ngSubmit)="onSubmitDev($event)">
+                    <h5>Pesquisar por Desenvolvedor: </h5>
+                    <input name="dev">
+                </form>
+                <form (ngSubmit)="onSubmitGen($event)">
+                    <h5>Pesquisar por Gênero: </h5>
+                    <input name="gen">
+                </form>
+            </div>
             <div class="card-body" *ngFor="let game of Games; let i = index">
                 <div>
                     <img ng-src="{{game.img}}" href="localhost:8081">
