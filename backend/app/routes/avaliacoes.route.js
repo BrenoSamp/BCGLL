@@ -8,6 +8,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false },
+    name: 'sessionID'
 }));
 
 const models = require('../models/models');

@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 var corsOptions = {
-    origin: '*'
+    origin: 'http://localhost:8081'
 };
 
 const gamesRoute = require('./app/routes/games.route');
@@ -13,7 +13,7 @@ const usuariosRoute = require('./app/routes/usuarios.route');
 const avaliacoesRoute = require('./app/routes/avaliacoes.route');
 const consolesRoute = require('./app/routes/consoles.route');
 
-app.use(cors(corsOptions));
+app.use(cors(corsOptions, { credentials: true }));
 
 app.use(express.json());
 
