@@ -16,32 +16,32 @@ export class ApiService {
   // Create
   createEmployee(data): Observable<any> {
     let url = `${this.baseUri}/create`;
-    return this.http.post(url, data).pipe(catchError(this.errorMgmt));
+    return this.http.post(url, data, { withCredentials: true }).pipe(catchError(this.errorMgmt));
   }
 
   createReview(data): Observable<any> {
     let url = `${this.baseUri}/avaliacoes/create`;
-    return this.http.post(url, data).pipe(catchError(this.errorMgmt));
+    return this.http.post(url, data, { withCredentials: true }).pipe(catchError(this.errorMgmt));
   }
 
   createGame(data): Observable<any> {
     let url = `${this.baseUri}/games/create`;
-    return this.http.post(url, data).pipe(catchError(this.errorMgmt));
+    return this.http.post(url, data, { withCredentials: true }).pipe(catchError(this.errorMgmt));
   }
 
   createUser(data): Observable<any> {
     let url = `${this.baseUri}/usuarios/signup`;
-    return this.http.post(url, data).pipe(catchError(this.errorMgmt));
+    return this.http.post(url, data, { withCredentials: true }).pipe(catchError(this.errorMgmt));
   }
 
   getEmployees() {
-    return this.http.get(`${this.baseUri}`);
+    return this.http.get(`${this.baseUri}`, { withCredentials: true });
   }
 
 
   getReviews(id): Observable<any> {
     let url = `${this.baseUri}/avaliacoes/${id}`;
-    return this.http.get(url, { headers: this.headers }).pipe(
+    return this.http.get(url, { headers: this.headers, withCredentials: true }).pipe(
       map((res: Response) => {
         return res || {};
       }),
@@ -51,7 +51,7 @@ export class ApiService {
 
   getConsoles(): Observable<any> {
     let url = `${this.baseUri}/consoles`;
-    return this.http.get(url, { headers: this.headers }).pipe(
+    return this.http.get(url, { headers: this.headers, withCredentials: true }).pipe(
       map((res: Response) => {
         return res || {};
       }),
@@ -62,7 +62,7 @@ export class ApiService {
 
   getGames(id): Observable<any> {
     let url = `${this.baseUri}/games/list-most-rated/${id}`;
-    return this.http.get(url, { headers: this.headers }).pipe(
+    return this.http.get(url, { headers: this.headers, withCredentials: true }).pipe(
       map((res: Response) => {
         return res || {};
       }),
@@ -72,7 +72,7 @@ export class ApiService {
 
   getGamesByName(id, nome): Observable<any> {
     let url = `${this.baseUri}/games/list-filtered/${id}?nome=${nome}`;
-    return this.http.get(url, { headers: this.headers }).pipe(
+    return this.http.get(url, { headers: this.headers, withCredentials: true }).pipe(
       map((res: Response) => {
         return res || {};
       }),
@@ -82,7 +82,7 @@ export class ApiService {
 
   getGamesByDev(id, desenvolvedor): Observable<any> {
     let url = `${this.baseUri}/games/list-filtered/${id}?desenvolvedor=${desenvolvedor}`;
-    return this.http.get(url, { headers: this.headers }).pipe(
+    return this.http.get(url, { headers: this.headers, withCredentials: true }).pipe(
       map((res: Response) => {
         return res || {};
       }),
@@ -92,7 +92,7 @@ export class ApiService {
 
   getGamesByGen(id, genero): Observable<any> {
     let url = `${this.baseUri}/games/list-filtered/${id}?genero=${genero}`;
-    return this.http.get(url, { headers: this.headers }).pipe(
+    return this.http.get(url, { headers: this.headers, withCredentials: true }).pipe(
       map((res: Response) => {
         return res || {};
       }),
@@ -103,14 +103,14 @@ export class ApiService {
   updateReview(id, data): Observable<any> {
     let url = `${this.baseUri}/update/${id}`;
     return this.http
-      .put(url, data, { headers: this.headers })
+      .put(url, data, { headers: this.headers, withCredentials: true })
       .pipe(catchError(this.errorMgmt));
   }
 
 
   userLogin(data): Observable<any> {
     let url = `${this.baseUri}/usuarios/login`;
-    return this.http.post(url, data).pipe(catchError(this.errorMgmt));
+    return this.http.post(url, data, { withCredentials: true }).pipe(catchError(this.errorMgmt));
   }
 
   // Error handling
