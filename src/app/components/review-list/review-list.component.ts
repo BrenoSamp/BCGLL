@@ -1,29 +1,25 @@
+import { Review } from './../../model/review';
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../service/api.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from './../../service/api.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-review-list',
   templateUrl: './review-list.component.html',
   styleUrls: ['./review-list.component.css']
 })
 export class ReviewListComponent implements OnInit {
-  
   Review:any = [];
+
   constructor(private apiService: ApiService) { 
-    this.readReview("_id");
+    this.readEmployee();
   }
-  ngOnInit() {}
-  readReview(id){
-    this.apiService.getReviews(id).subscribe((data) => {
+  ngOnInit() {
+  }
+  readEmployee(){
+    this.apiService.getReviews().subscribe((data) => {
      this.Review = data;
+     console.log(this.Review);
     })    
   }
-  removeReview(review, index) {
-    if(window.confirm('Are you sure?')) {
-        this.apiService.deleteReview(review._id).subscribe((data) => {
-          this.Review.splice(index, 1);
-        }
-      )    
-    }
-  }
-
 }

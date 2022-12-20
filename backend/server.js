@@ -1,10 +1,11 @@
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
 
 const app = express();
 
 var corsOptions = {
-    origin: '*'
+    origin: 'http://localhost:8081'
 };
 
 const gamesRoute = require('./app/routes/games.route');
@@ -12,7 +13,7 @@ const usuariosRoute = require('./app/routes/usuarios.route');
 const avaliacoesRoute = require('./app/routes/avaliacoes.route');
 const consolesRoute = require('./app/routes/consoles.route');
 
-app.use(cors(corsOptions));
+app.use(cors(corsOptions, { credentials: true }));
 
 app.use(express.json());
 
@@ -22,9 +23,8 @@ app.use('/usuarios', usuariosRoute);
 app.use('/avaliacoes', avaliacoesRoute);
 app.use('/consoles', consolesRoute);
 
-
 const db = require('./app/models/models');
-db.mongoose.connect('mongodb://localhost:27017/bcgll', {
+mongoose.connect('mongodb://127.0.0.1:27017/bcgll', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {

@@ -1,5 +1,5 @@
 export class Review {
-    codigo: string;
-    nome: string;
-    creditos: number;
+    nota: string;
+    descricao: string;
+    game_id: string;
  }
