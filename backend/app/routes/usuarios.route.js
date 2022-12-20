@@ -39,10 +39,10 @@ usuarioRoute.route('/login').post((req, res, next) => {
         email: req.body.email,
         senha: req.body.senha
     }, (error, data) => {
-        if (error) {
+        if (data === null) {
             return next(error)
         } else {
-            req.session.id = data;
+            req.session = 'Logado';
             console.log(data)
             res.json(data)
         }
