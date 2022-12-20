@@ -1,8 +1,6 @@
-import { Review } from './../../model/review';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from './../../service/api.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-review-list',
   templateUrl: './review-list.component.html',
@@ -11,15 +9,17 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class ReviewListComponent implements OnInit {
   Review:any = [];
 
-  constructor(private apiService: ApiService) { 
-    this.readEmployee();
+  constructor(private apiService: ApiService, private actRoute: ActivatedRoute) {
+    let id = this.actRoute.snapshot.paramMap.get('id');
+    this.readReviews(id);
   }
+
   ngOnInit() {
   }
-  readEmployee(){
-    this.apiService.getReviews().subscribe((data) => {
+  readReviews(id){
+    this.apiService.getReviews(id).subscribe((data) => {
      this.Review = data;
      console.log(this.Review);
-    })    
+    })
   }
 }

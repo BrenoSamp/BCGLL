@@ -52,7 +52,7 @@ export class GameCreateComponent implements OnInit {
       return this.apiService.createGame(this.gameForm.value).subscribe({
         complete: () => {
           console.log('Game successfully created!'),
-            this.ngZone.run(() => this.router.navigateByUrl('/game-list'));
+            this.ngZone.run(() => this.router.navigateByUrl('/lista-consoles'));
         },
         error: (e) => {
           console.log(e);

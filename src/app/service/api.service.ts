@@ -34,18 +34,13 @@ export class ApiService {
     return this.http.post(url, data).pipe(catchError(this.errorMgmt));
   }
 
-  // Get all employees
   getEmployees() {
     return this.http.get(`${this.baseUri}`);
   }
 
-  getReviews() {
-    return this.http.get(`${this.baseUri}/avaliacoes`);
-  }
 
-  // Get employee
-  getEmployee(id): Observable<any> {
-    let url = `${this.baseUri}/read/${id}`;
+  getReviews(id): Observable<any> {
+    let url = `${this.baseUri}/avaliacoes/${id}`;
     return this.http.get(url, { headers: this.headers }).pipe(
       map((res: Response) => {
         return res || {};
@@ -54,7 +49,6 @@ export class ApiService {
     );
   }
 
-  // Get employee
   getConsoles(): Observable<any> {
     let url = `${this.baseUri}/consoles`;
     return this.http.get(url, { headers: this.headers }).pipe(
@@ -106,44 +100,6 @@ export class ApiService {
     );
   }
 
-  getReview(id): Observable<any> {
-    let url = `${this.baseUri}/read/${id}`;
-    return this.http.get(url, { headers: this.headers }).pipe(
-      map((res: Response) => {
-        return res || {};
-      }),
-      catchError(this.errorMgmt)
-    );
-  }
-
-  getGames(id): Observable<any> {
-    let url = `${this.baseUri}/list-most-rated/${id}`;
-    return this.http.get(url, { headers: this.headers }).pipe(
-      map((res: Response) => {
-        return res || {};
-      }),
-      catchError(this.errorMgmt)
-    );
-  }
-
-  getGame(id): Observable<any> {
-    let url = `${this.baseUri}/list-most-rated/${id}`;
-    return this.http.get(url, { headers: this.headers }).pipe(
-      map((res: Response) => {
-        return res || {};
-      }),
-      catchError(this.errorMgmt)
-    );
-  }
-
-  // Update employee
-  updateEmployee(id, data): Observable<any> {
-    let url = `${this.baseUri}/update/${id}`;
-    return this.http
-      .put(url, data, { headers: this.headers })
-      .pipe(catchError(this.errorMgmt));
-  }
-
   updateReview(id, data): Observable<any> {
     let url = `${this.baseUri}/update/${id}`;
     return this.http
@@ -151,20 +107,6 @@ export class ApiService {
       .pipe(catchError(this.errorMgmt));
   }
 
-  // Delete employee
-  deleteEmployee(id): Observable<any> {
-    let url = `${this.baseUri}/delete/${id}`;
-    return this.http
-      .delete(url, { headers: this.headers })
-      .pipe(catchError(this.errorMgmt));
-  }
-
-  deleteReview(id): Observable<any> {
-    let url = `${this.baseUri}/delete/${id}`;
-    return this.http
-      .delete(url, { headers: this.headers })
-      .pipe(catchError(this.errorMgmt));
-  }
 
   userLogin(data): Observable<any> {
     let url = `${this.baseUri}/usuarios/login`;

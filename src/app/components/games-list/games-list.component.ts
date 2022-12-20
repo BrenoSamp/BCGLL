@@ -24,14 +24,6 @@ export class GamesListComponent implements OnInit {
   readGames(id){
     this.apiService.getGames(id).subscribe((data) => {
      this.Game = data;
-    })    
-  }
-  removeEmployee(employee, index) {
-    if(window.confirm('Are you sure?')) {
-        this.apiService.deleteEmployee(employee._id).subscribe((data) => {
-          this.Game.splice(index, 1);
-        }
-      )    
-    }
+    })
   }
 }

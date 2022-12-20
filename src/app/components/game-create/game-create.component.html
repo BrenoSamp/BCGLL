@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputDescricao">resumo</label>
+                    <label for="inputDescricao">Resumo</label>
                     <input class="form-control" type="text" formControlName="resumo" />
                     <!-- error -->
                     <div class="invalid-feedback" *ngIf="submitted && myForm['resumo'].errors?.['required']">
@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputImagem">Image</label>
+                    <label for="inputImagem">URL da Imagem</label>
                     <input class="form-control" type="text" formControlName="image" />
                     <!-- error -->
                     <div class="invalid-feedback" *ngIf="submitted && myForm['image'].errors?.['required']">
@@ -51,7 +51,7 @@
                         Genero is necessary.
                     </div>
                 </div>
-                
+
 
                 <div class="form-group" style="text-align:center">
                     <button class="btn btn-success btn-lg btn-block" type="submit">
