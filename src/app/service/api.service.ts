@@ -16,26 +16,44 @@ export class ApiService {
   // Create
   createEmployee(data): Observable<any> {
     let url = `${this.baseUri}/create`;
-    return this.http.post(url, data).pipe(catchError(this.errorMgmt));
+    return this.http.post(url, data, { withCredentials: true }).pipe(catchError(this.errorMgmt));
   }
 
   createReview(data): Observable<any> {
+<<<<<<< Updated upstream
     let url = `${this.baseUri}/create`;
     return this.http.post(url, data).pipe(catchError(this.errorMgmt));
+=======
+    let url = `${this.baseUri}/avaliacoes/create`;
+    return this.http.post(url, data, { withCredentials: true }).pipe(catchError(this.errorMgmt));
+>>>>>>> Stashed changes
   }
 
   createGame(data): Observable<any> {
     let url = `${this.baseUri}/games/create`;
-    return this.http.post(url, data).pipe(catchError(this.errorMgmt));
+    return this.http.post(url, data, { withCredentials: true }).pipe(catchError(this.errorMgmt));
   }
 
+<<<<<<< Updated upstream
+=======
+  createUser(data): Observable<any> {
+    let url = `${this.baseUri}/usuarios/signup`;
+    return this.http.post(url, data, { withCredentials: true }).pipe(catchError(this.errorMgmt));
+  }
+
+>>>>>>> Stashed changes
   // Get all employees
   getEmployees() {
     return this.http.get(`${this.baseUri}`);
   }
 
+<<<<<<< Updated upstream
   getReviews(id) {
     return this.http.get(`${this.baseUri}/avaliacoes/${id}`);
+=======
+  getReviews() {
+    return this.http.get(`${this.baseUri}/avaliacoes`, { withCredentials: true });
+>>>>>>> Stashed changes
   }
 
   // Get employee
@@ -52,7 +70,11 @@ export class ApiService {
   // Get employee
   getConsoles(): Observable<any> {
     let url = `${this.baseUri}/consoles`;
+<<<<<<< Updated upstream
     return this.http.get(url, { headers: this.headers }).pipe(
+=======
+    return this.http.get(url, { headers: this.headers, withCredentials: true }).pipe(
+>>>>>>> Stashed changes
       map((res: Response) => {
         return res || {};
       }),
@@ -62,7 +84,7 @@ export class ApiService {
 
   getReview(id): Observable<any> {
     let url = `${this.baseUri}/read/${id}`;
-    return this.http.get(url, { headers: this.headers }).pipe(
+    return this.http.get(url, { headers: this.headers, withCredentials: true }).pipe(
       map((res: Response) => {
         return res || {};
       }),
@@ -70,6 +92,29 @@ export class ApiService {
     );
   }
 
+<<<<<<< Updated upstream
+=======
+  getGames(id): Observable<any> {
+    let url = `${this.baseUri}/list-most-rated/${id}`;
+    return this.http.get(url, { headers: this.headers, withCredentials: true }).pipe(
+      map((res: Response) => {
+        return res || {};
+      }),
+      catchError(this.errorMgmt)
+    );
+  }
+
+  getGame(id): Observable<any> {
+    let url = `${this.baseUri}/list-most-rated/${id}`;
+    return this.http.get(url, { headers: this.headers, withCredentials: true }).pipe(
+      map((res: Response) => {
+        return res || {};
+      }),
+      catchError(this.errorMgmt)
+    );
+  }
+
+>>>>>>> Stashed changes
   // Update employee
   updateEmployee(id, data): Observable<any> {
     let url = `${this.baseUri}/update/${id}`;
@@ -100,6 +145,14 @@ export class ApiService {
       .pipe(catchError(this.errorMgmt));
   }
 
+<<<<<<< Updated upstream
+=======
+  userLogin(data): Observable<any> {
+    let url = `${this.baseUri}/usuarios/login`;
+    return this.http.post(url, data, { withCredentials: true }).pipe(catchError(this.errorMgmt));
+  }
+
+>>>>>>> Stashed changes
   // Error handling
   errorMgmt(error: HttpErrorResponse) {
     let errorMessage = '';

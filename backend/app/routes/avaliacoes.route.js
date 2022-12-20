@@ -7,7 +7,11 @@ app.use(session({
     secret: 'nosso segredinho',
     resave: false,
     saveUninitialized: true,
+<<<<<<< Updated upstream
     cookie: { secure: false },
+=======
+    name: 'catapimbas'
+>>>>>>> Stashed changes
 }));
 
 const models = require('../models/models');
