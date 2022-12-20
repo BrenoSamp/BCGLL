@@ -7,11 +7,8 @@ app.use(session({
     secret: 'nosso segredinho',
     resave: false,
     saveUninitialized: true,
-<<<<<<< Updated upstream
     cookie: { secure: false },
-=======
     name: 'catapimbas'
->>>>>>> Stashed changes
 }));
 
 const models = require('../models/models');
@@ -46,11 +43,8 @@ usuarioRoute.route('/login').post((req, res, next) => {
         if (error) {
             return next(error)
         } else {
-<<<<<<< Updated upstream
-=======
             req.session = {};
             req.session.email = req.body.email;
->>>>>>> Stashed changes
             console.log(data)
             res.json(data)
             console.log(req.session.email)
