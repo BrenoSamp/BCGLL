@@ -60,6 +60,17 @@ export class ApiService {
     );
   }
 
+
+  getGames(id): Observable<any> {
+    let url = `${this.baseUri}/games/list-most-rated/${id}`;
+    return this.http.get(url, { headers: this.headers }).pipe(
+      map((res: Response) => {
+        return res || {};
+      }),
+      catchError(this.errorMgmt)
+    );
+  }
+
   getReview(id): Observable<any> {
     let url = `${this.baseUri}/read/${id}`;
     return this.http.get(url, { headers: this.headers }).pipe(

@@ -1,0 +1,20 @@
+<div class="row justify-content-center">
+    <div class="col-md-4 register-employee">
+        <!-- form card register -->
+        <div class="card card-outline-secondary">
+            <div class="card-header">
+                <h3 class="mb-0">Jogos mais bem avaliados</h3>
+            </div>
+            <div class="card-body" *ngFor="let game of Games; let i = index">
+                <div>
+                    <img ng-src="{{game.img}}" href="localhost:8081">
+                    <div><b>Titulo:</b> {{game.nome}}</div>
+                    <div><b>Resumo:</b> {{game.resumo}}</div>
+                    <div><b>Desenvolvedor:</b> {{game.desenvolvedor}}</div>
+                    <div><b>Gênero:</b> {{game.genero}}</div>
+                    <div><b>Nota:</b> {{game.avaliacao}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

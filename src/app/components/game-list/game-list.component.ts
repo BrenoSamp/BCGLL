@@ -34,7 +34,7 @@ export class GameListComponent implements OnInit {
     this.selectedOption = selectedConsole;
   }
   onClick(event: Event) {
-    this.ngZone.run(() => this.router.navigateByUrl('/console-games/' + this.selectedOption));
+    this.ngZone.run(() => this.router.navigateByUrl('/lista-games/' + this.selectedOption));
   }
 
   onSubmit() {

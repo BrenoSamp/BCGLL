@@ -7,6 +7,7 @@ import { ReviewListComponent } from './components/review-list/review-list.compon
 import { ReviewCreateComponent } from './components/review-create/review-create.component';
 import { GameListComponent } from './components/game-list/game-list.component';
 import { GameCreateComponent } from './components/game-create/game-create.component';
+import { ConsoleGamesListComponent } from './components/console-games-list/console-games-list.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'create-review/:id', component: ReviewCreateComponent},
   { path: 'reviews-list/:id', component: ReviewListComponent},
   { path: 'lista-consoles', component: GameListComponent},
-  { path: 'game-create', component: GameCreateComponent}
+  { path: 'game-create', component: GameCreateComponent},
+  { path: 'lista-games/:id', component: ConsoleGamesListComponent},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -13,6 +13,7 @@ import { ReviewListComponent } from './components/review-list/review-list.compon
 import { ReviewCreateComponent } from './components/review-create/review-create.component';
 import { GameCreateComponent } from './components/game-create/game-create.component';
 import { GameListComponent } from './components/game-list/game-list.component';
+import { ConsoleGamesListComponent } from './components/console-games-list/console-games-list.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { GameListComponent } from './components/game-list/game-list.component';
     ReviewCreateComponent,
     GameCreateComponent,
     GameListComponent,
+    ConsoleGamesListComponent,
   ],
   imports: [
     ReactiveFormsModule,
