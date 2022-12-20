@@ -16,6 +16,7 @@ import { ConsoleListComponent } from './components/console-list/console-list.com
 import { UserCreateComponent } from './components/user-create/user-create.component';
 import { LoginComponent } from './components/login/login.component';
 import { GamesListComponent } from './components/games-list/games-list.component';
+import { ConsoleGamesListComponent } from './components/console-games-list/console-games-list.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { GamesListComponent } from './components/games-list/games-list.component
     UserCreateComponent,
     LoginComponent,
     GamesListComponent,
+    ConsoleGamesListComponent,
   ],
   imports: [
     ReactiveFormsModule,

@@ -34,7 +34,7 @@ export class ConsoleListComponent implements OnInit {
     this.selectedOption = selectedConsole;
   }
   onClick(event: Event) {
-    this.ngZone.run(() => this.router.navigateByUrl('/list-most-rated/' + this.selectedOption));
+    this.ngZone.run(() => this.router.navigateByUrl('/lista-games/' + this.selectedOption));
   }
 
   onSubmit() {

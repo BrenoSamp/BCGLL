@@ -65,6 +65,47 @@ export class ApiService {
     );
   }
 
+
+  getGames(id): Observable<any> {
+    let url = `${this.baseUri}/games/list-most-rated/${id}`;
+    return this.http.get(url, { headers: this.headers }).pipe(
+      map((res: Response) => {
+        return res || {};
+      }),
+      catchError(this.errorMgmt)
+    );
+  }
+
+  getGamesByName(id, nome): Observable<any> {
+    let url = `${this.baseUri}/games/list-filtered/${id}?nome=${nome}`;
+    return this.http.get(url, { headers: this.headers }).pipe(
+      map((res: Response) => {
+        return res || {};
+      }),
+      catchError(this.errorMgmt)
+    );
+  }
+
+  getGamesByDev(id, desenvolvedor): Observable<any> {
+    let url = `${this.baseUri}/games/list-filtered/${id}?desenvolvedor=${desenvolvedor}`;
+    return this.http.get(url, { headers: this.headers }).pipe(
+      map((res: Response) => {
+        return res || {};
+      }),
+      catchError(this.errorMgmt)
+    );
+  }
+
+  getGamesByGen(id, genero): Observable<any> {
+    let url = `${this.baseUri}/games/list-filtered/${id}?genero=${genero}`;
+    return this.http.get(url, { headers: this.headers }).pipe(
+      map((res: Response) => {
+        return res || {};
+      }),
+      catchError(this.errorMgmt)
+    );
+  }
+
   getReview(id): Observable<any> {
     let url = `${this.baseUri}/read/${id}`;
     return this.http.get(url, { headers: this.headers }).pipe(

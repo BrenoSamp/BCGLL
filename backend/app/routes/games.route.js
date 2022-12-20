@@ -47,18 +47,19 @@ gamesRoute.route('/list-filtered/:consoleId').get((req, res, next) => {
     var query = {
         console_id: req.params.consoleId
     };
-    bodyParams = req.body;
+
+    bodyParams = req.query;
 
     if (bodyParams.nome) {
-        query.nome = bodyParams.nome
+        query['nome'] = bodyParams.nome
     }
 
     if (bodyParams.desenvolvedor) {
-        query.desenvolvedor = bodyParams.desenvolvedor
+        query['desenvolvedor'] = bodyParams.desenvolvedor
     }
 
     if (bodyParams.genero) {
-        query.genero = bodyParams.genero
+        query['genero'] = bodyParams.genero
     }
 
     consoleGames = Games

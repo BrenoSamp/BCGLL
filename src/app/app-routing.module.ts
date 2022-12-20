@@ -7,7 +7,8 @@ import { ConsoleListComponent } from './components/console-list/console-list.com
 import { GameCreateComponent } from './components/game-create/game-create.component';
 import { UserCreateComponent } from './components/user-create/user-create.component';
 import { LoginComponent } from './components/login/login.component';
-import { GamesListComponent } from './components/games-list/games-list.component';
+import { ConsoleGamesListComponent } from './components/console-games-list/console-games-list.component';
+
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'lista-consoles' },
@@ -15,7 +16,7 @@ const routes: Routes = [
   { path: 'avaliacoes', component: ReviewListComponent},
   { path: 'create-review/:id', component: ReviewCreateComponent},
   { path: 'reviews-list/:id', component: ReviewListComponent},
-  {path: 'list-most-rated/:id', component: GamesListComponent},
+  {path: 'lista-games/:id', component: ConsoleGamesListComponent},
   {path: 'game-create', component: GameCreateComponent}, 
   {path: 'user-create', component: UserCreateComponent},
   { path: 'lista-consoles', component: ConsoleListComponent},
