@@ -10,7 +10,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class GameCreateComponent implements OnInit {
   submitted = false;
+  selectedOption: any;
   gameForm: FormGroup;
+  Consoles: any = [];
   GameProfile: any = ['nome', 'resumo', 'genero', 'image', 'console_id', 'desenvolvedor'];
   constructor(
     public fb: FormBuilder,
@@ -19,8 +21,9 @@ export class GameCreateComponent implements OnInit {
     private apiService: ApiService
   ) {
     this.mainForm();
+    this.readConsole();
   }
-  ngOnInit() {}
+  ngOnInit() { }
   mainForm() {
     this.gameForm = this.fb.group({
       nome: ['', [Validators.required]],
@@ -37,6 +40,16 @@ export class GameCreateComponent implements OnInit {
     this.gameForm.get('designation').setValue(e, {
       onlySelf: true,
     });
+  }
+
+  readConsole() {
+    this.apiService.getConsoles().subscribe((data) => {
+      this.Consoles = data;
+    })
+  }
+
+  onSelected(selectedConsole: string) {
+    this.selectedOption = selectedConsole;
   }
   // Getter to access form control
   get myForm() {

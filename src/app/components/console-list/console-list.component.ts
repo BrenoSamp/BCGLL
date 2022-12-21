@@ -30,7 +30,6 @@ export class ConsoleListComponent implements OnInit {
   }
 
   onSelected(selectedConsole: string){
-  console.log(selectedConsole);
     this.selectedOption = selectedConsole;
   }
   onClick(event: Event) {
