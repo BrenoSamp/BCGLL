@@ -39,7 +39,6 @@
                     <label for="inputConsole">Nome do console</label>
                     <br>
                     <select #consoles (change)="onSelected(consoles.value)" class="form-control" formControlName="console_id">
-                        <option default>Selecione um console</option>
                         <option *ngFor="let console of Consoles" [value]="console.nome">
                             {{console.nome }}</option>
                     </select>
