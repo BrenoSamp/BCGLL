@@ -6,8 +6,6 @@ import { ApiService } from './service/api.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EmployeeCreateComponent } from './components/employee-create/employee-create.component';
-import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { ReviewListComponent } from './components/review-list/review-list.component';
 import { ReviewCreateComponent } from './components/review-create/review-create.component';
 import { GameCreateComponent } from './components/game-create/game-create.component';
@@ -20,8 +18,6 @@ import { ConsoleGamesListComponent } from './components/console-games-list/conso
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeCreateComponent,
-    EmployeeListComponent,
     ReviewListComponent,
     ReviewCreateComponent,
     GameCreateComponent,

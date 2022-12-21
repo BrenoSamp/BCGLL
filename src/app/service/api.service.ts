@@ -14,10 +14,6 @@ export class ApiService {
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient) { }
   // Create
-  createEmployee(data): Observable<any> {
-    let url = `${this.baseUri}/create`;
-    return this.http.post(url, data).pipe(catchError(this.errorMgmt));
-  }
 
   createReview(data): Observable<any> {
     let url = `${this.baseUri}/avaliacoes/create`;
@@ -33,11 +29,6 @@ export class ApiService {
     let url = `${this.baseUri}/usuarios/signup`;
     return this.http.post(url, data).pipe(catchError(this.errorMgmt));
   }
-
-  getEmployees() {
-    return this.http.get(`${this.baseUri}`);
-  }
-
 
   getReviews(id): Observable<any> {
     let url = `${this.baseUri}/avaliacoes/${id}`;
