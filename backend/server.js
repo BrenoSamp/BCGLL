@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 var corsOptions = {
-    origin: 'http://localhost:8081',
+    origin: 'https://bcgll.vercel.app/',
     optionsSuccessStatus: 200,
     credentials: true,
     preflightContinue: true
