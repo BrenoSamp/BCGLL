@@ -5,7 +5,10 @@ const mongoose = require('mongoose');
 const app = express();
 
 var corsOptions = {
-    origin: 'http://localhost:8081'
+    origin: 'http://localhost:8081',
+    optionsSuccessStatus: 200,
+    credentials: true,
+    preflightContinue: true
 };
 
 const gamesRoute = require('./app/routes/games.route');
