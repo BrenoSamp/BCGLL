@@ -48,7 +48,7 @@ export class UserCreateComponent implements OnInit {
       return this.apiService.createUser(this.userForm.value).subscribe({
         complete: () => {
           console.log('Usuário successfully created!'),
-            this.ngZone.run(() => this.router.navigateByUrl('/game-list'));
+            this.ngZone.run(() => this.router.navigateByUrl('/lista-consoles'));
         },
         error: (e) => {
           console.log(e);

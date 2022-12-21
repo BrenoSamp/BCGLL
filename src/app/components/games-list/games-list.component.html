@@ -14,9 +14,11 @@
       <tbody>
         <tr *ngFor="let game of Game; let i = index">
           <th scope="row">{{employee._id}}</th>
-          <td>{{employee.codigo}}</td>
-          <td>{{employee.nome}}</td>
-          <td>{{employee.creditos}}</td>
+          <td>{{game.imagem}}</td>
+          <td>{{game.nome}/td>
+          <td>{{game.desenvolvedor}}</td>
+          <td>{{game.genero}}</td>
+          <td>{{game.descricao}}</td>
           <td class="text-center edit-block">
             <span class="edit" [routerLink]="['/edit-employee/', employee._id]">
               <button type="button" class="btn btn-success btn-sm">Edit</button>
