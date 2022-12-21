@@ -22,11 +22,14 @@
     <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="inputNome">Nota</label>
-        <select #nota (change)="onSelected(nota.value)">
-          <option default>0</option>
-          <option *ngFor="let number of Numbers">
+        <select #nota (change)="onSelected(nota.value)" formControlName="nota">
+          <option *ngFor="let i of Numbers">
+            {{i.number}}
+          </option>
       </select>
-        
+      </div>
+
+      <div>
         <label for="inputNome">Descrição</label>
         <input class="form-control" type="text" formControlName="descricao" />
         <!-- error -->

@@ -10,7 +10,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class ReviewListComponent implements OnInit {
   Review:any = [];
-  Numbers:any = [0,1,2,3,4,5,6,7,8,9,10];
+  Numbers:any = [{number: 1}, {number: 2}, {number: 3}, {number: 4}, {number: 5},
+  {number: 6}, {number: 7}, {number: 8}, {number: 9}, {number: 10}];
+  tempId: any;
   submitted = false;
   reviewForm: FormGroup;
   selectedOption: string;
@@ -22,14 +24,15 @@ export class ReviewListComponent implements OnInit {
     private apiService: ApiService
   ) {
     let id = this.actRoute.snapshot.paramMap.get('id');
+    this.tempId = id;
     this.readReviews(id);
     this.mainForm(id);
   }
-
+  
   ngOnInit() { }
   mainForm(id) {
     this.reviewForm = this.fb.group({
-      nota: ['', [Validators.required]],
+      nota: this.selectedOption,
       descricao: ['', [Validators.required]],
       game_id:id,
     });
@@ -61,6 +64,7 @@ export class ReviewListComponent implements OnInit {
       return this.apiService.createReview(this.reviewForm.value).subscribe({
         complete: () => {
           console.log('Review successfully created!')
+          this.readReviews(this.tempId);
         },
         error: (e) => {
           console.log(e);
