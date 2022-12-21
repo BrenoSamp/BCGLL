@@ -10,7 +10,7 @@ import {
   providedIn: 'root',
 })
 export class ApiService {
-  baseUri: string = 'https://backend-4wsv.onrender.com/';
+  baseUri: string = 'https://backend-4wsv.onrender.com';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   constructor(private http: HttpClient) { }
   // Create
